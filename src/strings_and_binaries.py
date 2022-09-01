@@ -1,6 +1,6 @@
 '''
-    This file was created with the intention of better understanding
-    how strings converted and eventually stored as binaries in memory.
+    This file was created with the intention of better understanding how
+    strings are converted and eventually stored as binaries in memory.
 
     In a nutshell, each character in the string is first converted to its
     ASCII equivalent, which is a decimal value, then converted to binary.
