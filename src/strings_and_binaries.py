@@ -1,3 +1,12 @@
+'''
+    This file was created with the intention of better understanding
+    how strings converted and eventually stored as binaries in memory.
+
+    In a nutshell, each character in the string is first converted to its
+    ASCII equivalent, which is a decimal value, then converted to binary.
+    After which, to convert it back to a string, the process is reversed.
+'''
+
 def toBinary(a: str):
     bin_list = []
     for char in a:
