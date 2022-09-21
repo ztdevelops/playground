@@ -43,10 +43,17 @@ def get_family_members(head):
     return visited
 
 
-## Testing functions...
+## Testing...
+h1 = ('Mary', [])
+h2 = ('Jane', [('Nick', []), ('Wendy', [])])
+h3 = ('Frank', [('Mary', []), ('Jane', [('Nick', [])])])
+h4 = ('Alan', [('Bob', [('Chris', [])]), ('Eric', [])])
+h5 = ('Alan', [('Bob', [('Chris', []), ('Debbie', [('Cindy', [])])]), ('Eric', [('Dan', []), ('Fanny', [('George', [])])]), ('Hannah', [])])
+
 def is_correct(expected, actual):
     if len(actual) != len(expected):
         print(f"Expected len {len(expected)} but got len {len(actual)}.")
+        return False
 
     counter = 0
     for i in range(len(expected)):
@@ -59,12 +66,13 @@ def is_correct(expected, actual):
 
 
 def check_results(expected_answers: list, answers: list):
-    num_correct = 0
-    max = len(expected_answers)
     if len(expected_answers) != len(answers):
         print("Number of expected answers do not match number of answers.")
         return
-    
+
+    num_correct = 0
+    max = len(expected_answers)
+
     for i in range(len(expected_answers)):
         ea = expected_answers[i]
         a = answers[i]
@@ -78,12 +86,6 @@ def check_results(expected_answers: list, answers: list):
     
     print(f"Total score: {num_correct} out of {max} ({(num_correct/max) * 100}%).")
 
-
-h1 = ('Mary', [])
-h2 = ('Jane', [('Nick', []), ('Wendy', [])])
-h3 = ('Frank', [('Mary', []), ('Jane', [('Nick', [])])])
-h4 = ('Alan', [('Bob', [('Chris', [])]), ('Eric', [])])
-h5 = ('Alan', [('Bob', [('Chris', []), ('Debbie', [('Cindy', [])])]), ('Eric', [('Dan', []), ('Fanny', [('George', [])])]), ('Hannah', [])])
 
 expected_a1 = ['Mary']
 expected_a2 = ['Jane', 'Nick', 'Wendy']

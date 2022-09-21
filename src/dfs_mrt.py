@@ -99,6 +99,7 @@ def find_stations_within_distance(mrt_map: list, orig: str, dist: int):
     return [x for x in visited if x != orig]
 
 
+## Testing...
 mrt_map = [
             ['Botanic Gardens', 'Stevens', 'Newton', 'Little India', 'Rochor'],
             ['Newton', 'Novena', 'Toa Payoh', 'Braddell', 'Bishan'],
@@ -108,11 +109,6 @@ mrt_map = [
 def is_correct(expected, actual):
     if len(actual) != len(expected):
         print(f"Expected len {len(expected)} but got len {len(actual)}.")
-
-        for x in expected:
-            if x not in actual:
-                print(f"{x} not found in actual answer.")
-                break
         return False
 
     counter = 0
