@@ -1,3 +1,20 @@
+
+'''
+    This file was created with the intention of better understanding how
+    DFS works. The DFS was used to tackle one of questions in my school's
+    Lab Test.
+
+    In a nutshell, DFS works by traversing through all possible nodes given
+    a starting point. Traditionally, when a node has been visited, a corresponding
+    attribute will be updated. (eg node.visited = True) In this example, I added
+    them to a list instead. At the end of the day, they serve the same purpose.
+
+    For this question, I was required to return a list of all possible stations, 
+    or nodes, given the maximum number of steps you can take. For instance, if
+    the maximum steps I can take is 2, I need to return all the stations I can
+    reach within 2 stops, inclusive of the stations that can be reached in 1 stop. 
+'''
+
 def dfs(visited: list, neighbours: dict, node: str, origin: str, steps: int):
     # If the steps are 0, it means that we can't move anymore.
     # If the node is found in the visited list, it means that
@@ -35,15 +52,15 @@ def find_stations_within_distance(mrt_map: list, orig: str, dist: int):
 
     mrt_dict = {}
 
-    # Therefore, we need a nested for-loop to access the station itself.
-    # At this step, I'll be adding them to a dictionary.
+    # Therefore, we need a nested for-loop to access the station
+    # itself. At this step, I'll be adding them to a dictionary.
     # The goal here is to add them to a list in such a way that
-    # for each station, represented as a key, it keeps note of the
-    # neighbours, represented as the value to that key.
+    # for each station, represented as a key, it keeps note of
+    # the 7neighbours, represented as the value to that key.
     for line in mrt_map:
         for station in line:
-            # Getting the index of the station for that specific line,
-            # so we can get its neighbours.
+            # Getting the index of the station for that
+            # specific line, so we can get its neighbours.
             idx = line.index(station)
             # Setting the limits to the corner indexes.
             # This is to prevent a negative index, or
