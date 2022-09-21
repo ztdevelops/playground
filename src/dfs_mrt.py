@@ -45,6 +45,7 @@ def dfs(visited: list, neighbours: dict, node: str, origin: str, steps: int):
     for neighbour in neighbours[node]:
         dfs(visited, neighbours, neighbour, origin, steps)
 
+
 def find_stations_within_distance(mrt_map: list, orig: str, dist: int):
     # mrt_map [[...], [...], [...]]
     # mrt_map is a list of lines.
@@ -124,6 +125,7 @@ def is_correct(expected, actual):
     
     return counter == len(expected)
 
+
 def check_results(expected_answers: list, answers: list):
     num_correct = 0
     max = len(expected_answers)
@@ -143,6 +145,7 @@ def check_results(expected_answers: list, answers: list):
         print(f"Answer is correct: {correct}\n")
     
     print(f"Total score: {num_correct} out of {max} ({(num_correct/max) * 100}%).")
+
 
 expected_a1 = ['Stevens', 'Newton']
 expected_a2 = ['Farrer Park', 'Newton', 'Rochor', 'Dhoby Ghaut']
